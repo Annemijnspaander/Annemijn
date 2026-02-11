@@ -1,0 +1,32 @@
+body {
+    margin: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, sans-serif;
+    background-color: #f59987;
+}
+
+header, footer {
+    background-color: #811118;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+nav {
+    background-color: #c6eba8;
+    text-align: center;
+    padding: 10px;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 20px;
+}
+
+.flex-item {
+    background-color: #dbeafe;
+    padding: 20px;
+    width: 30%;
+    border-radius: 8px;
+}
