@@ -1,4 +1,4 @@
-/* Algemene instellingen */
+
 * {
     margin: 0;
     padding: 0;
@@ -7,13 +7,12 @@
 
 body {
     font-family: "neue-kabel", sans-serif;
-    background-color: #ffffff;
+    background-color: #fffcef;
     color: #111;
 }
 
-/* Navigatiebalk */
 .navbar {
-    background-color: #000;
+    background-color: #411111;
     padding: 20px;
 }
 
@@ -37,7 +36,6 @@ body {
     padding-bottom: 5px;
 }
 
-/* Hero section */
 .hero {
     position: relative;
     width: 100%;
@@ -51,7 +49,6 @@ body {
     object-fit: cover;
 }
 
-/* Tekst over de gif */
 .hero-text {
     position: absolute;
     top: 50%;
@@ -64,11 +61,10 @@ body {
     text-align: center;
     text-transform: lowercase;
 
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: #4111116e;
     padding: 30px 40px;
 }
 
-/* Introductie */
 .intro {
     padding: 60px 20%;
     text-align: center;
@@ -81,5 +77,62 @@ body {
 
 .intro p {
     font-size: 18px;
+    line-height: 1.6;
+}
+/* Pagina titel */
+.page-title {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.page-title h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.page-title p {
+    font-size: 18px;
+}
+
+/* Kunstblokken */
+.kunst-blokken {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    padding: 0 10%;
+}
+
+/* Standaard blok: afbeelding links, tekst rechts */
+.kunst-block {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+/* Afwisselend blok: afbeelding rechts, tekst links */
+.kunst-block.reverse {
+    flex-direction: row-reverse;
+}
+
+/* Afbeeldingen */
+.kunst-block img {
+    width: 50%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* Tekst */
+.kunst-text {
+    width: 50%;
+}
+
+.kunst-text h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.kunst-text p {
+    font-size: 16px;
     line-height: 1.6;
 }
