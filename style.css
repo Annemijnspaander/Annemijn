@@ -79,7 +79,7 @@ body {
     font-size: 18px;
     line-height: 1.6;
 }
-/* Pagina titel */
+
 .page-title {
     text-align: center;
     padding: 50px 20px;
@@ -94,7 +94,6 @@ body {
     font-size: 18px;
 }
 
-/* Kunstblokken */
 .kunst-blokken {
     display: flex;
     flex-direction: column;
@@ -102,19 +101,16 @@ body {
     padding: 0 10%;
 }
 
-/* Standaard blok: afbeelding links, tekst rechts */
 .kunst-block {
     display: flex;
     align-items: center;
     gap: 40px;
 }
 
-/* Afwisselend blok: afbeelding rechts, tekst links */
 .kunst-block.reverse {
     flex-direction: row-reverse;
 }
 
-/* Afbeeldingen */
 .kunst-block img {
     width: 50%;
     height: auto;
@@ -122,7 +118,6 @@ body {
     object-fit: cover;
 }
 
-/* Tekst */
 .kunst-text {
     width: 50%;
 }
