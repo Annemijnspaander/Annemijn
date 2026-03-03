@@ -199,3 +199,33 @@ body {
     color: white;
     transform: translateY(-5px);
 }
+
+.quote-section{
+    text-align: center;
+    padding: 80px 20%;
+}
+
+#quote{
+    padding: 30px;
+    margin: 30px auto;
+    border-radius: 10px;
+    background-color: #411111;
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+    max-width: 600px;
+}
+
+.quote-section button{
+    padding: 12px 25px;
+    border: none;
+    background-color: #411111;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.quote-section button:hover{
+    background-color: #411111;
+}
