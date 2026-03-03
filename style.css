@@ -165,3 +165,37 @@ body {
         opacity: 0.4;
     }
 }
+
+.thema-section {
+    padding: 80px 15%;
+}
+
+.thema-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.thema-blok {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 120px;
+
+    text-decoration: none;
+    color: #411111;
+    font-size: 22px;
+    font-weight: 500;
+
+    border: 2px solid #411111;
+    border-radius: 10px;
+
+    transition: all 0.3s ease;
+}
+
+.thema-blok:hover {
+    background-color: #411111;
+    color: white;
+    transform: translateY(-5px);
+}
