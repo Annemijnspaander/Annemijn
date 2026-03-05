@@ -6,8 +6,9 @@
      <link rel="icon" type="image/png" href="img/HWUD04_logo_as.png">
 
     <link rel="stylesheet" href="https://use.typekit.net/ptd1dgj.css">
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./javascript/script.js"></script>
+    
 </head>
 
 <body>
@@ -17,12 +18,12 @@
         </div>
             <ul>
                 <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="modern.html">Moderne kunst</a></li>
-                <li><a href="oud.html">Klassieke kunst</a></li>
-                <li><a href="dans.html">Dans</a></li>
-                <li><a href="muziek.html">Muziek</a></li>
-                <li><a href="textiel.html">Textiel</a></li>
-                <li><a href="kaart.html">Musea</a></li>
+                <li><a href="./html/modern.html">Moderne kunst</a></li>
+                <li><a href="./html/oud.html">Klassieke kunst</a></li>
+                <li><a href="./html/dans.html">Dans</a></li>
+                <li><a href="./html/muziek.html">Muziek</a></li>
+                <li><a href="./html/textiel.html">Textiel</a></li>
+                <li><a href="./html/kaart.html">Musea</a></li>
             </ul>
         </nav>
     </header>
@@ -51,17 +52,17 @@
 
     <div class="thema-grid">
 
-        <a href="klassiek.html" class="thema-blok">Klassieke kunst</a>
+        <a href="./html/klassiek.html" class="thema-blok">Klassieke kunst</a>
 
-        <a href="modern.html" class="thema-blok">Moderne kunst</a>
+        <a href="./html/modern.html" class="thema-blok">Moderne kunst</a>
 
-        <a href="dans.html" class="thema-blok">Dans</a>
+        <a href="./html/dans.html" class="thema-blok">Dans</a>
 
-        <a href="muziek.html" class="thema-blok">Muziek</a>
+        <a href="./html/muziek.html" class="thema-blok">Muziek</a>
 
-        <a href="textiel.html" class="thema-blok">Textiel</a>
+        <a href="./html/textiel.html" class="thema-blok">Textiel</a>
 
-        <a href="kaart.html" class="thema-blok">Musea</a>
+        <a href="./html/kaart.html" class="thema-blok">Musea</a>
 
     </div>
     </section>
@@ -78,15 +79,48 @@ Klik op de knop voor een cute kunst quote.
 
 </section>
 
+<section class="timeline-section">
+
+<h1>Tijdlijn van de kunstgeschiedenis</h1>
+
+<div class="timeline">
+
+<div class="tijdpunt" onclick="toonInfo('renaissance')">
+1400<br>Renaissance
+</div>
+
+<div class="tijdpunt" onclick="toonInfo('barok')">
+1600<br>Barok
+</div>
+
+<div class="tijdpunt" onclick="toonInfo('romantiek')">
+1800<br>Romantiek
+</div>
+
+<div class="tijdpunt" onclick="toonInfo('modernisme')">
+1900<br>Modernisme
+</div>
+
+<div class="tijdpunt" onclick="toonInfo('hedendaags')">
+2000<br>Hedendaagse kunst
+</div>
+
+</div>
+
+<div id="timeline-info" class="timeline-info">
+Klik op een periode om meer informatie te zien.
+</div>
+
+</section>
+
 <footer class="footer">
 
     <div class="footer-content">
         <p>© 2026 Kunst Website</p>
 
         <a href="index.html" class="footer-link">Home</a>
-        <a href="contact.html" class="footer-link">Contact</a>
+        <a href="./html/contact.html" class="footer-link">Contact</a>
     </div>
-
 </footer>
 </body>
 </html>
