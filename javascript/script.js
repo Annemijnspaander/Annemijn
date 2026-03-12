@@ -1,3 +1,23 @@
+window.addEventListener('scroll', function () {
+  const definitie = document.querySelector('.art-definitie');
+  const tekst = document.querySelector('.art-tekst');
+  if (!definitie || !tekst) return;
+
+  const rect = definitie.getBoundingClientRect();
+  const total = definitie.offsetHeight;
+
+  // Hoe ver zijn we door de .art-definitie sectie gescrold? (0 = begin, 1 = eind)
+  const progress = -rect.top / total;
+
+  // Tekst zichtbaar tussen 30% en 70% van de sectie
+  if (progress > 0.3 && progress < 0.7) {
+    const opacity = Math.min((progress - 0.3) / 0.15, 1) * Math.min((0.7 - progress) / 0.1, 1);
+    tekst.style.opacity = opacity;
+  } else {
+    tekst.style.opacity = 0;
+  }
+});
+
 // Quotes generator:
 function nieuweQuote() {
   const quotes = [
@@ -42,3 +62,4 @@ tekst = "Hedendaagse kunst gebruikt vaak nieuwe materialen, technologie en conce
 document.getElementById("timeline-info").innerText = tekst;
 
 }
+

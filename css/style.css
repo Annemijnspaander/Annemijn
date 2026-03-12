@@ -36,39 +36,136 @@ body {
   padding-bottom: 5px;
 }
 
-/* voorpagina */
-.hero {
+/* tekst over gif heen*/
+.scroll-container {
   position: relative;
-  width: 100%;
-  height: 80vh;
-  overflow: hidden;
+  height: 200vh;
 }
 
-.hero img {
+.sticky-gif {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  margin-bottom: -100vh; 
+}
+
+.sticky-gif img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.hero-text {
+.scherm {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+.scherm-1 { top: 0; }
+.scherm-2 { top: 100vh; }
+
+.hero-text {
   color: #fffcef;
   font-size: 64px;
   font-weight: 600;
   text-align: center;
-
   background-color: #4111116e;
   padding: 30px 40px;
 }
 
+/* tekst over gif heen */
+.scroll-container {
+  position: relative;
+  height: 200vh;
+  overflow: clip;   
+}
+
+.sticky-gif {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+.sticky-gif img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.scherm {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scherm-1 { top: 0; }
+.scherm-2 { top: 100vh; }
+
+.hero-text {
+  color: #fffcef;
+  font-size: 64px;
+  font-weight: 600;
+  text-align: center;
+  background-color: #4111116e;
+  padding: 30px 40px;
+}
+
+.art-tekst {
+  display: flex;
+  flex-direction: column;
+  padding: 60px;
+  color: white;
+  width: 100%;
+}
+
+.art-tekst h2 {
+  font-size: 80px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.art-tekst .fonetisch {
+  font-size: 22px;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.art-tekst p {
+  font-size: 22px;
+  max-width: 500px;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+/* Zorg dat de rest van de pagina normaal over het gif heen schuift */
+.intro {
+  position: relative;
+  z-index: 2;
+  background-color: #fffcef;
+}
+
 /* Intro text*/
 .intro {
+  position: relative;
+  z-index: 2;
+  background-color: #fffcef;
   padding: 60px 20%;
   text-align: center;
+}
+
+.thema-section {
+  position: relative;
+  z-index: 2;
+  background-color: #fffcef;
+  padding: 80px 15%;
 }
 
 .intro h1 {
@@ -323,4 +420,13 @@ border-radius:8px;
 
 .footer-link:hover {
     text-decoration: underline;
+}
+
+.timeline-section {
+  padding: 60px 0;
+}
+
+.footer {
+  margin: 0;
+  width: 100%;
 }
