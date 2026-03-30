@@ -1,4 +1,3 @@
-// Maak de kaart aan
 var map = L.map('map').setView([52.3, 5.3], 8);
 
 // Achtergrondkaart
@@ -6,7 +5,7 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
     attribution: '© CartoDB'
 }).addTo(map);
 
-// WFS-url: vraag musea op als GeoJSON
+// WFS-url: musea als GeoJSON
 var wfsUrl = "https://services.rce.geovoorziening.nl/Veiligheid_van_Erfgoed/wfs"
     + "?SERVICE=WFS"
     + "&VERSION=2.0.0"
@@ -15,7 +14,7 @@ var wfsUrl = "https://services.rce.geovoorziening.nl/Veiligheid_van_Erfgoed/wfs"
     + "&OUTPUTFORMAT=application/json"
     + "&SRSNAME=EPSG:4326";
 
-// Haal de data op en toon op kaart
+// data ophalen en tonen
 fetch(wfsUrl)
     .then(response => response.json())
     .then(data => {
