@@ -31,10 +31,9 @@
             <ul>
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="modern.html">Moderne kunst</a></li>
-                <li><a href="oud.html">Klassieke kunst</a></li>
+                <li><a href="oud.html">15e/17e eeuw</a></li>
                 <li><a href="dans.html">Dans</a></li>
                 <li><a href="muziek.html">Muziek</a></li>
-                <li><a href="textiel.html">Textiel</a></li>
                 <li><a href="kaart.html" class="active">Musea</a></li>
             </ul>
         </nav>
@@ -48,6 +47,99 @@
     <div class="kaart-wrapper">
         <div id="map"></div>
     </div>
+
+    <section class="musea-grafiek-sectie">
+  <h1>Meest bezochte musea in Europa</h1>
+  <p>Naast alle musea in Nederland, zitten er ook zat in de rest van Europa! In deze grafiek zijn de meest bezochtte musea van Europa gevisualiseerd.</p>
+
+  <div class="view-toggle">
+    <button class="vtab actief" onclick="toonView('grafiek', this)">Grafiek</button>
+    <button class="vtab" onclick="toonView('tabel', this)">Tabel</button>
+  </div>
+
+  <div id="view-grafiek" style="position: relative; width: 100%; height: 380px;">
+    <canvas id="museumChart"></canvas>
+  </div>
+
+  <table class="musea-tabel" id="view-tabel" style="display: none;">
+    <thead>
+      <tr>
+        <th>Rang</th><th>Museum</th><th>Stad, Land</th><th>Bezoekers</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td><strong>Louvre Museum</strong></td><td>Parijs, Frankrijk</td><td>8,7 – 9,0 mln</td></tr>
+      <tr><td>2</td><td><strong>Vatican Museums</strong></td><td>Vaticaanstad, Italië</td><td>~6,8 mln</td></tr>
+      <tr><td>3</td><td><strong>British Museum</strong></td><td>Londen, VK</td><td>~6,5 mln</td></tr>
+      <tr><td>4</td><td><strong>Tate Modern</strong></td><td>Londen, VK</td><td>~4,6 mln</td></tr>
+      <tr><td>5</td><td><strong>Musée d'Orsay</strong></td><td>Parijs, Frankrijk</td><td>~3,8 mln</td></tr>
+      <tr><td>6</td><td><strong>Victoria and Albert Museum</strong></td><td>Londen, VK</td><td>~3,5 mln</td></tr>
+      <tr><td>7</td><td><strong>Museo del Prado</strong></td><td>Madrid, Spanje</td><td>~3,5 mln</td></tr>
+      <tr><td>8</td><td><strong>Rijksmuseum</strong></td><td>Amsterdam, Nederland</td><td>~2,4 – 2,7 mln</td></tr>
+    </tbody>
+  </table>
+
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+const musea = [
+  { naam: 'Louvre Museum',         stad: 'Parijs',       bezoekers: 8.85, nl: false },
+  { naam: 'Vatican Museums',       stad: 'Vaticaanstad', bezoekers: 6.8,  nl: false },
+  { naam: 'British Museum',        stad: 'Londen',       bezoekers: 6.5,  nl: false },
+  { naam: 'Tate Modern',           stad: 'Londen',       bezoekers: 4.6,  nl: false },
+  { naam: "Musée d'Orsay",         stad: 'Parijs',       bezoekers: 3.8,  nl: false },
+  { naam: 'Victoria & Albert',     stad: 'Londen',       bezoekers: 3.5,  nl: false },
+  { naam: 'Museo del Prado',       stad: 'Madrid',       bezoekers: 3.5,  nl: false },
+  { naam: 'Rijksmuseum',           stad: 'Amsterdam',    bezoekers: 2.55, nl: true  },
+];
+
+new Chart(document.getElementById('museumChart'), {
+  type: 'bar',
+  data: {
+    labels: musea.map(m => m.naam),
+    datasets: [{
+      data: musea.map(m => m.bezoekers),
+      backgroundColor: musea.map(m => m.nl ? '#AFA9EC' : '#AFA9EC'),
+      borderColor:     musea.map(m => m.nl ? '#7F77DD' : '#7F77DD'),
+      borderWidth: 1,
+      borderRadius: 4,
+    }]
+  },
+  options: {
+    indexAxis: 'y',
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        callbacks: {
+          label: (c) => ' ' + c.raw.toFixed(1) + ' miljoen bezoekers',
+          title: (items) => musea[items[0].dataIndex].naam + ' — ' + musea[items[0].dataIndex].stad
+        }
+      }
+    },
+    scales: {
+      x: {
+        beginAtZero: true,
+        ticks: { callback: (v) => v + ' mln', font: { size: 11 } },
+        grid: { color: 'rgba(0,0,0,0.05)' }
+      },
+      y: {
+        ticks: { font: { size: 12 } },
+        grid: { display: false }
+      }
+    }
+  }
+});
+
+function toonView(view, knop) {
+  document.querySelectorAll('.vtab').forEach(t => t.classList.remove('actief'));
+  knop.classList.add('actief');
+  document.getElementById('view-grafiek').style.display = view === 'grafiek' ? 'block' : 'none';
+  document.getElementById('view-tabel').style.display  = view === 'tabel'    ? 'table' : 'none';
+}
+</script>
 
     <footer class="footer">
         <div class="footer-content">
@@ -65,5 +157,6 @@
     <!-- Kaart script -->
     <script src="../javascript/javascript.js"></script>
 
+    
 </body>
 </html>
