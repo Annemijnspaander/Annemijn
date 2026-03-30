@@ -24,8 +24,6 @@ function nieuweQuote() {
     "To make living itself an art, that is the goal.",
     "You are way to creative for a 9 to 5.",
     "Do epic shit.",
-    "Yahoo",
-    "boehoe",
   ];
 
   let random = Math.floor(Math.random() * quotes.length);
